@@ -1,0 +1,330 @@
+#!/bin/bash
+
+# Automatic settinger ADB v.0.1
+# Author - Findlee
+# E-Mail - thefindlee@gmail.com
+# Profile on 4pda.ru - http://4pda.ru/forum/index.php?showuser=1498763
+# Special for sony-developers.ru
+# Thank user BPaul(paul-xxx) for help
+
+chmod 777 adb
+
+setterm -bold 
+tput setaf 1 
+if [[ ! "$UID" -eq 0 ]]
+then
+echo "You not have root permissions. Use sudo."
+tput sgr0
+sleep 2
+exit $?
+fi
+
+while :
+do
+
+setterm -bold 
+tput setaf 1 
+clear
+echo "============================================================="
+echo "Automatic Settinger ADB v.0.1 by Findlee"
+echo "============================================================="
+tput sgr0
+
+echo "
+1)Acer
+2)ASUS
+3)Google
+4)HTC
+5)Huawei
+6)Lenovo
+7)LG
+8)Motorola
+9)Samsung
+10)SONY
+11)Sony Ericsson
+12)ZTE
+13)Exit
+"
+read -p "Select device: " opt
+echo ""
+case $opt in
+1)
+setterm -bold 
+tput setaf 1
+echo "Selected device Acer"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+2)
+echo "Selected device ASUS"
+read -s -n1 -p "Press any key to continue" keypress
+setterm -bold 
+tput setaf 1 
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+3)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Google"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+4)
+setterm -bold 
+tput setaf 1 
+echo "Selected device HTC"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+5)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Huawei"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+6)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Lenovo"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+7)
+setterm -bold 
+tput setaf 1 
+echo "Selected device LG"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+8)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Motorola"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+9)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Samsung"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+10)
+setterm -bold 
+tput setaf 1 
+echo "Selected device SONY"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="054c", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+11)
+setterm -bold 
+tput setaf 1 
+echo "Selected device Sony Ericsson"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+
+12)
+setterm -bold 
+tput setaf 1 
+echo "Selected device ZTE"
+read -s -n1 -p "Press any key to continue" keypress
+echo -e "\nDeleting old .rules , if have"
+rm -f /etc/udev/rules.d/*-android.*
+echo "Creating new .rules file"
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0666", GROUP="plugdev"' > /etc/udev/rules.d/51-android.rules
+echo "Setting permissions"
+chmod a+r /etc/udev/rules.d/51-android.rules
+echo "Restarting udev service"
+service udev restart
+echo "Stopping adb server"
+./adb kill-server
+echo "Starting adb server"
+./adb start-server
+echo "Checking adb devices"
+./adb devices
+tput sgr0
+read -s -n1 -p "Press any key to continue" keypress
+;;
+13)
+exit
+;;
+esac
+done
